@@ -1,50 +1,80 @@
-# React + TypeScript + Vite
+# 多链钱包 Chrome 插件
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+一个支持 Cosmos 和以太坊生态的多链钱包 Chrome 插件。
 
-Currently, two official plugins are available:
+## 功能特点
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 支持 Keplr 钱包（Cosmos 生态）
+- 支持 MetaMask 钱包（以太坊生态）
+- 查看钱包余额
+- 转账功能
+- 交易历史记录
+- 实时通知提醒
+- 美观的用户界面
 
-## Expanding the ESLint configuration
+## 技术栈
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Vite
+- TailwindCSS
+- Ant Design
+- Zustand
 
-- Configure the top-level `parserOptions` property like this:
+## 开发环境要求
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Node.js >= 16
+- pnpm >= 8
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 安装和使用
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. 克隆仓库：
+   ```bash
+   git clone [repository-url]
+   cd chrome-plugin
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. 安装依赖：
+   ```bash
+   pnpm install
+   ```
+
+3. 创建环境变量文件：
+   ```bash
+   cp .env.example .env
+   ```
+   然后编辑 `.env` 文件，填入必要的配置信息。
+
+4. 开发模式：
+   ```bash
+   pnpm dev
+   ```
+
+5. 构建插件：
+   ```bash
+   pnpm build
+   ```
+
+6. 安装到 Chrome：
+   - 打开 Chrome 浏览器
+   - 访问 `chrome://extensions/`
+   - 开启"开发者模式"
+   - 点击"加载已解压的扩展程序"
+   - 选择项目的 `dist` 目录
+
+## 使用说明
+
+1. 安装插件后，点击 Chrome 工具栏中的插件图标
+2. 选择要连接的钱包类型（Keplr 或 MetaMask）
+3. 按照提示完成钱包连接
+4. 连接成功后可以查看余额、进行转账和查看交易历史
+
+## 注意事项
+
+- 使用前请确保已安装 Keplr 或 MetaMask 浏览器扩展
+- 请妥善保管您的钱包私钥和助记词
+- 转账前请仔细核对接收地址
+
+## 许可证
+
+MIT
