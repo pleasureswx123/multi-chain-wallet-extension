@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "多链钱包",
+  "version": "1.0.0",
+  "description": "支持 Cosmos 和以太坊生态的多链钱包插件",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  }
+} 
